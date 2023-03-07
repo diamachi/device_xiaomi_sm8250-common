@@ -115,12 +115,12 @@ BOARD_RAMDISK_USE_LZ4 := false
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_SOURCE := kernel/xiaomi/munch
 TARGET_KERNEL_ARCH := arm64
-KERNEL_LD := LD=ld.lld
-TARGET_BUILD_WITH_LTO := true
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := clang-latest
-TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/$(TARGET_KERNEL_CLANG_VERSION)
-TARGET_KERNEL_ADDITIONAL_FLAGS := AS=llvm-as AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+#KERNEL_LD := LD=ld.lld
+#TARGET_BUILD_WITH_LTO := true
+#TARGET_KERNEL_CLANG_COMPILE := true
+#TARGET_KERNEL_CLANG_VERSION := clang-stable
+#TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/$(TARGET_KERNEL_CLANG_VERSION)
+#TARGET_KERNEL_ADDITIONAL_FLAGS := AS=llvm-as AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
